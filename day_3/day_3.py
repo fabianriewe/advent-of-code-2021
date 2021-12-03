@@ -1,10 +1,9 @@
 with open("./input.txt") as file:
-    lines = file.readlines()
+    lines = list(map(lambda l: l.strip(), file.readlines()))
 
-transposed = [""] * len(lines[0].strip())
+transposed = [""] * len(lines[0])
 
-for line_number, line in enumerate(lines):
-    line = line.strip()
+for line in lines:
     for index, bit in enumerate(line):
         transposed[index] += bit
 
